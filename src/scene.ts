@@ -37,7 +37,7 @@ function init() {
   document.body.appendChild(renderer.domElement)
 
   scene = new THREE.Scene()
-  scene.background = new THREE.Color('#1a1a1a')
+  scene.background = new THREE.Color('#707070')
 
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
   camera.position.set(4, 5, 10)
@@ -172,12 +172,9 @@ function init() {
 
   gui = new GUI()
   gui.add(cameraControls, 'autoRotate').name('Auto-Rotate')
+  gui.add(gridHelper, 'visible').name('Gitterebene')
+  gui.add(axesHelper, 'visible').name('XYZ-Achsen')
   
-  // Helfer-Folder
-  const helpersFolder = gui.addFolder('Helfer')
-  helpersFolder.add(gridHelper, 'visible').name('Gitterebene')
-  helpersFolder.add(axesHelper, 'visible').name('XYZ-Achsen')
-  helpersFolder.open()
   
 }
 
